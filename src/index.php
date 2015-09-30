@@ -30,7 +30,10 @@ spl_autoload_register("auto_load_api");
 $plugin_manager = new PluginManager(base_directory);
 
 //Example method of triggering hooks
-$example_hook = new GenericHook('example_hook', array('data' => 'Example Plugin Data'));
+$data = array('data' => 'Example Plugin Data');
+$example_hook = new GenericHook('example_hook', $data);
 $example_hook->web = true;
 
 $plugin_manager->trigger($example_hook);
+
+var_dump($example_hook->arguments);

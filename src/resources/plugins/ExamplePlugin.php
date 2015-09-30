@@ -31,8 +31,10 @@ class ExamplePlugin extends Plugin {
      * @hook example_hook
      * @priority 1
      */
-    public function ExampleHookCallback($hook_arguments) {
+    public function ExampleHookCallback(&$hook_arguments) {
         echo PHP_EOL."example_hook Called!".PHP_EOL;
         var_dump($hook_arguments);
+        $hook_arguments['data'] = "Changed hook data via plugin!";
+        $hook_arguments['extra'] = "Added some extra data :3";
     }
 }
