@@ -1,6 +1,9 @@
 <?php
 /**
- * Class Plugin
+ * Created by creatorfromhell.
+ * Date: 11/20/15
+ * Time: 10:10 AM
+ * Version: Beta 1
  */
 abstract class Plugin {
 

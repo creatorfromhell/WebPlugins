@@ -1,11 +1,9 @@
 <?php
 /**
- * Created by Daniel Vidmar.
- * Date: 2/16/2015
- * Time: 9:14 PM
- * Version: Beta 2
- * Last Modified: 2/16/2015 at 9:14 PM
- * Last Modified by Daniel Vidmar.
+ * Created by creatorfromhell.
+ * Date: 11/20/15
+ * Time: 10:10 AM
+ * Version: Beta 1
  */
 
 /**

@@ -1,9 +1,10 @@
 <?php
+
 /**
  * Created by creatorfromhell.
- * Date: 9/29/15
- * Time: 12:21 PM
- * Version: Beta 2
+ * Date: 11/20/15
+ * Time: 10:10 AM
+ * Version: Beta 1
  */
 class GenericHook extends Hook {
 }
