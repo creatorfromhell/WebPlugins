@@ -35,5 +35,3 @@ $example_hook = new GenericHook('example_hook', $data);
 $example_hook->web = true;
 
 $plugin_manager->trigger($example_hook);
-
-var_dump($example_hook->arguments);

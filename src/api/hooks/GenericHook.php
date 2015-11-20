@@ -6,5 +6,4 @@
  * Version: Beta 2
  */
 class GenericHook extends Hook {
-
 }

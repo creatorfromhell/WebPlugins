@@ -12,7 +12,7 @@ class PluginManager {
     /**
      * @var array
      */
-    private $hooks = array();
+    public $hooks = array();
 
     private $web_hooks = array();
 
@@ -28,12 +28,13 @@ class PluginManager {
     private function initialize_hooks() {
         //Initialize you hooks here if you elect to not use hook files(one hook per file).
         $example_hook = new GenericHook("example_hook");
+
         $this->add_hook($example_hook);
 
         if(hook_files) {
-            $hook_directory = $this->base_directory . "/api/hooks/";
+            $hook_directory = $this->base_directory."/api/hooks/";
             $this->load_hooks($hook_directory);
-            $this->load_hooks($hook_directory . "*/");
+            $this->load_hooks($hook_directory."*/");
         }
     }
 
@@ -65,7 +66,7 @@ class PluginManager {
      */
     private function add_hook_reflect($class_name) {
         $reflector = new ReflectionClass($class_name);
-        if(!$reflector->isAbstract() && $reflector->isSubclassOf("Hook") && $class_name !== "GenericHook" && $reflector->hasProperty("friendly_name")) {
+        if(!$reflector->isAbstract() && $reflector->isSubclassOf("Hook") && $class_name != "GenericHook" && $reflector->hasProperty("friendly_name")) {
             $instance = $reflector->newInstance();
             $name = $reflector->getProperty("friendly_name")->getValue($instance);
             $this->hooks[$name] = "";
@@ -146,7 +147,7 @@ class PluginManager {
             foreach($this->web_hooks[$hook->friendly_name] as &$url) {
                 $curl = curl_init($url);
                 curl_setopt_array($curl, array(
-                    CURLOPT_USERAGENT => 'Trackr WebHook Request: '.$hook->friendly_name,
+                    CURLOPT_USERAGENT => 'WebPlugins WebHook Request: '.$hook->friendly_name,
                     CURLOPT_POSTFIELDS => $hook->arguments,
                 ));
                 curl_exec($curl);
